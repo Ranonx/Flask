@@ -39,6 +39,10 @@ def send(phone,inputName,BookDate,BookTime):
     res = requests.post(url,data=param)
     return str(res.text)
 
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 @app.route('/relay', methods=['POST'])
 def handle_json():
     content_type = request.headers.get('Content-Type')
